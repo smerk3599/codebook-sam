@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 export const Rating = ({ rating }) => {
   let ratingArray = Array(5).fill(false);
   for (let i = 0; i < rating; i++) {
@@ -5,7 +7,7 @@ export const Rating = ({ rating }) => {
   }
 
   return (
-    <div>
+    <Fragment>
       {ratingArray.map((value, index) =>
         value ? (
           <i
@@ -19,6 +21,6 @@ export const Rating = ({ rating }) => {
           ></i>
         )
       )}
-    </div>
+    </Fragment>
   );
 };
