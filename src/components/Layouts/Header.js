@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Search } from "../Sections/Search";
+import { Search } from "../../components";
 
 import Robot from "../../assets/robot.png";
 
@@ -8,7 +8,7 @@ export const Header = () => {
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
   );
-  const [show, setShow] = useState(false);
+  const [searchSection, setSearchSection] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
@@ -39,7 +39,7 @@ export const Header = () => {
               className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi bi-toggles"
             ></span>
             <span
-              onClick={() => setShow(!show)}
+              onClick={() => setSearchSection(!searchSection)}
               className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-binoculars"
             ></span>
             <Link to="/cart" className="text-gray-700 dark:text-white mr-5">
@@ -53,7 +53,7 @@ export const Header = () => {
           </div>
         </div>
       </nav>
-      {show && <Search setShow={setShow} />}
+      {searchSection && <Search setSearchSection={setSearchSection} />}
     </header>
   );
 };
