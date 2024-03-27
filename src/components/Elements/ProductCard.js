@@ -40,15 +40,14 @@ export const ProductCard = ({ product }) => {
         </p>
 
         <div className="flex items-center my-2">
-          {<Rating rating={rating} />}
+          <Rating rating={rating} />
         </div>
 
         <p className="flex justify-between items-center">
           <span className="text-2xl dark:text-gray-200">
             <span>$</span>
-            <span> {price} </span>
+            <span>{price}</span>
           </span>
-
           {!inCart && (
             <button
               onClick={() => addToCart(product)}
