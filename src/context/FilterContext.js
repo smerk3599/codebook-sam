@@ -71,6 +71,7 @@ export const FilterProvider = ({ children }) => {
     products: filteredProductList,
     initialProductList,
   };
+
   return (
     <FilterContext.Provider value={value}>{children}</FilterContext.Provider>
   );
