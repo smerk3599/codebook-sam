@@ -283,6 +283,12 @@
       "password": "$2a$10$K9aEH3/VDb2QU/EsjrHGJO7X5JxCcg0bMAnBtyT3kBW9FL7FnnygO",
       "name": "Shubham Sarda",
       "id": 1
+    },
+    {
+      "email": "kfp@pandalot.com",
+      "password": "$2a$10$wU/kp0urAIwADvjDSJJnxO1tAd83DoST7fM.n3ObOnIUnCJJXi6za",
+      "name": "KFP",
+      "id": 2
     }
   ]
 }
