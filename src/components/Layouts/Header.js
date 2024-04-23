@@ -10,6 +10,7 @@ export const Header = () => {
   );
   const [searchSection, setSearchSection] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const token = JSON.parse(sessionStorage.getItem("token"));
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
@@ -55,7 +56,12 @@ export const Header = () => {
               onClick={() => setDropdown(!dropdown)}
               className="bi bi-person-bounding-box cursor-pointer text-2xl text-gray-700 dark:text-white"
             ></span>
-            {dropdown && <DropdownLoggedOut />}
+            {dropdown &&
+              (token ? (
+                <DropdownLoggedIn setDropdown={setDropdown} />
+              ) : (
+                <DropdownLoggedOut setDropdown={setDropdown} />
+              ))}
           </div>
         </div>
       </nav>
