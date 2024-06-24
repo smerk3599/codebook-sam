@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Robot from "../../assets/robot.png";
 import { Search } from "../Sections/Search";
 import { DropdownLoggedOut, DropdownLoggedIn } from "../index";
+import { useCart } from "../../context";
 
 export const Header = () => {
   const [darkMode, setDarkMode] = useState(
@@ -11,6 +12,7 @@ export const Header = () => {
   const [searchSection, setSearchSection] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const token = JSON.parse(sessionStorage.getItem("token"));
+  const { cartList } = useCart();
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
@@ -48,7 +50,7 @@ export const Header = () => {
             <Link to="/cart" className="text-gray-700 dark:text-white mr-5">
               <span className="text-2xl bi bi-bag-fill relative">
                 <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">
-                  0
+                  {cartList.length}
                 </span>
               </span>
             </Link>
