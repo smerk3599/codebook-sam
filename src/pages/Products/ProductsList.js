@@ -15,7 +15,7 @@ export const ProductsList = () => {
   useEffect(() => {
     async function fetchProducts() {
       const response = await fetch(
-        `http://localhost:8000/products?name_like=${
+        `http://localhost:8000/444/products?name_like=${
           searchTerm ? searchTerm : ""
         }`
       );
