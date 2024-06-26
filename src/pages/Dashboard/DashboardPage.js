@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { useTitle } from "../../hooks/useTitle";
 import { getUserOrders } from "../../services";
 import { DashboardEmpty } from "./components/DashboardEmpty";
 import { DashboardCard } from "./components/DashboardCard";
 
 export const DashboardPage = () => {
   const [orders, setOrders] = useState([]);
+  useTitle("Dashboard");
 
   useEffect(() => {
     async function fetchOrders() {
@@ -24,12 +26,10 @@ export const DashboardPage = () => {
       </section>
       <section>
         {orders.length &&
-          orders.map((order) => {
-            <DashboardCard key={order.id} order={order} />;
-          })}
+          orders.map((order) => <DashboardCard key={order.id} order={order} />)}
         ;
       </section>
-      <section>{orders.length === 0 && <DashboardEmpty />}</section>
+      <section>{!orders.length && <DashboardEmpty />}</section>
     </main>
   );
 };

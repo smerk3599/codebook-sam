@@ -6,3 +6,4 @@ export { OrderPage } from "./Order/OrderPage";
 export { DashboardPage } from "./Dashboard/DashboardPage";
 export { Register } from "./Register";
 export { Login } from "./Login";
+export { PageNotFound } from "./PageNotFound";
