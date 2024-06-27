@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 import { useTitle } from "../../hooks/useTitle";
 import { getUserOrders } from "../../services";
 import { DashboardEmpty } from "./components/DashboardEmpty";
@@ -11,8 +12,12 @@ export const DashboardPage = () => {
 
   useEffect(() => {
     async function fetchOrders() {
-      const data = await getUserOrders();
-      setOrders(data);
+      try {
+        const data = await getUserOrders();
+        setOrders(data);
+      } catch (error) {
+        toast.error(error.message, { position: "bottom-center" });
+      }
     }
     fetchOrders();
   }, []);

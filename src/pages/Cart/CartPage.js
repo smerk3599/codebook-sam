@@ -5,7 +5,7 @@ import { useCart } from "../../context";
 
 export const CartPage = () => {
   const { cartList } = useCart();
-  useTitle("Cart");
+  useTitle(`Cart -- (${cartList.length})`);
 
   return <main>{cartList.length ? <CartList /> : <CartEmpty />}</main>;
 };

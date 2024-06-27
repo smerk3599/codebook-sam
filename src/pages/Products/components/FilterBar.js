@@ -15,7 +15,7 @@ export const FilterBar = ({ setShow }) => {
       >
         <h5
           id="drawer-disable-body-scrolling-label"
-          className="p-1 text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
+          className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
         >
           Filters
         </h5>
@@ -192,8 +192,8 @@ export const FilterBar = ({ setShow }) => {
                       payload: { bestSellerOnly: !state.bestSellerOnly },
                     })
                   }
-                  id="best-seller"
                   checked={state.bestSellerOnly || false}
+                  id="best-seller"
                   type="checkbox"
                   value=""
                   className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 dark:bg-gray-700 dark:border-gray-600"
@@ -213,8 +213,8 @@ export const FilterBar = ({ setShow }) => {
                       payload: { onlyInStock: !state.onlyInStock },
                     })
                   }
-                  id="only-instock"
                   checked={state.onlyInStock || false}
+                  id="only-instock"
                   type="checkbox"
                   value=""
                   className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 dark:bg-gray-700 dark:border-gray-600"

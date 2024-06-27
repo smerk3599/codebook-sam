@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+import { toast } from "react-toastify";
 import { useFilter } from "../../context";
 import { ProductCard } from "../../components";
 import { FilterBar } from "./components/FilterBar";
@@ -15,11 +16,15 @@ export const ProductsList = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const data = await getProductList(searchTerm);
-      initialProductList(data);
+      try {
+        const data = await getProductList(searchTerm);
+        initialProductList(data);
+      } catch (error) {
+        toast.error(error.message, { position: "bottom-center" });
+      }
     }
     fetchProducts();
-  }, [searchTerm, initialProductList]);
+  }, [searchTerm]);
 
   return (
     <main>
