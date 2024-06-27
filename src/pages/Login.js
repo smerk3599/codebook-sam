@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTitle } from "../hooks/useTitle";
 import { toast } from "react-toastify";
 import { login } from "../services";
 
@@ -7,6 +8,7 @@ export const Login = () => {
   const email = useRef();
   const password = useRef();
   const navigate = useNavigate();
+  useTitle("Login");
 
   async function handleLogin(event) {
     event.preventDefault();
